@@ -1,6 +1,6 @@
 ### Golem
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/geocine/golem)](https://goreportcard.com/report/github.com/geocine/golem)
+[![Go Report Card](https://goreportcard.com/badge/github.com/geocine/golem)](https://goreportcard.com/report/github.com/geocine/golem) [![Build Status](https://travis-ci.org/geocine/golem.svg?branch=master)](https://travis-ci.org/geocine/golem)
 
 An interactive command-line utility to write your commits automatically with a changelog convention
 
