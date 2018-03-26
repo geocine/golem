@@ -1,12 +1,12 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"os/exec"
 	"strings"
 
 	"gopkg.in/AlecAivazis/survey.v1"
+	"gopkg.in/alecthomas/kingpin.v2"
 )
 
 // the questions to ask
@@ -27,7 +27,7 @@ var qs = []*survey.Question{
 				"test     | add/update tests ",
 				"chore    | other changes that doesn't modify src/test",
 				"revert   | revert previous commit"},
-			Default: "red",
+			Default: "feat",
 		},
 	},
 	{
@@ -49,7 +49,7 @@ var qs = []*survey.Question{
 
 func main() {
 
-	noIssue := flag.Bool("--no-issue", true, "commit without an issue")
+	noIssue := kingpin.Flag("no-issue", "commit without an issue").Short('n').Bool()
 	// the answers will be written to this struct
 	answers := struct {
 		Type    string `survey:"type"`
@@ -58,7 +58,7 @@ func main() {
 		Issue   string
 	}{}
 
-	flag.Parse()
+	kingpin.Parse()
 	if *noIssue {
 		qs = RemoveIndex(qs, 3)
 	}
