@@ -62,8 +62,6 @@ func main() {
 	if *noIssue {
 		qs = RemoveIndex(qs, 3)
 	}
-	fmt.Println(noIssue)
-	fmt.Println(qs)
 	// perform the questions
 	err := survey.Ask(qs, &answers)
 	if err != nil {
