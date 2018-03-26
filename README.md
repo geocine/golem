@@ -1,9 +1,9 @@
 # Golem
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/geocine/golem)](https://goreportcard.com/report/github.com/geocine/golem) [![Build Status](https://travis-ci.org/geocine/golem.svg?branch=master)](https://travis-ci.org/geocine/golem)
+[![Go Report Card](https://goreportcard.com/badge/github.com/geocine/golem)](https://goreportcard.com/report/github.com/geocine/golem) [![Build Status](https://travis-ci.org/geocine/golem.svg?branch=master)](https://travis-ci.org/geocine/golem) [![GoDoc](https://godoc.org/gopkg.in/geocine/golem.v0?status.svg)](https://godoc.org/gopkg.in/geocine/golem.v0)
 
 An interactive command-line utility to write your commits automatically with a changelog convention
 
-[![asciicast](https://i.imgur.com/8MveYRq.png)](https://asciinema.org/a/bq03xyXu2FZpOID6gPQ5M6n7U)
+![demo](https://raw.githubusercontent.com/geocine/golem/gifs/gif/demo.gif)
 
 Inspired by [cz-cli](https://github.com/commitizen/cz-cli)
