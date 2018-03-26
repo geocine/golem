@@ -75,10 +75,7 @@ func main() {
 	}
 	fmt.Printf("message: %s", out)
 	fmt.Println()
-	output, err := exec.Command("git", "commit", "-m", out).CombinedOutput()
-	if err != nil {
-		fmt.Println(err.Error())
-	}
+	output, _ := exec.Command("git", "commit", "-m", out).CombinedOutput()
 	fmt.Println(string(output))
 }
 
