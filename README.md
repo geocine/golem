@@ -4,6 +4,6 @@
 
 An interactive command-line utility to write your commits automatically with a changelog convention
 
-![demo](https://raw.githubusercontent.com/geocine/golem/gifs/gif/demo.gif)
+![demo](https://i.imgur.com/5L8dc4S.gif)
 
 Inspired by [cz-cli](https://github.com/commitizen/cz-cli)
