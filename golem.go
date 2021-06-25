@@ -49,7 +49,7 @@ var qs = []*survey.Question{
 
 func main() {
 
-	noIssue := kingpin.Flag("no-issue", "commit without an issue").Short('n').Bool()
+	withIssue := kingpin.Flag("with-issue", "commit with an issue").Short('i').Bool()
 	// the answers will be written to this struct
 	answers := struct {
 		Type    string `survey:"type"`
@@ -59,7 +59,7 @@ func main() {
 	}{}
 
 	kingpin.Parse()
-	if *noIssue {
+	if !*withIssue {
 		qs = RemoveIndex(qs, 3)
 	}
 	// perform the questions
@@ -70,7 +70,7 @@ func main() {
 	}
 
 	out := fmt.Sprintf("%s(%s): %s | %s", answers.Type, answers.Scope, answers.Issue, answers.Message)
-	if *noIssue {
+	if !*withIssue {
 		out = fmt.Sprintf("%s(%s): %s", answers.Type, answers.Scope, answers.Message)
 	}
 	fmt.Printf("message: %s", out)
