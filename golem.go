@@ -31,9 +31,8 @@ var qs = []*survey.Question{
 		},
 	},
 	{
-		Name:     "scope",
-		Prompt:   &survey.Input{Message: "Scope of this change:"},
-		Validate: survey.Required,
+		Name:   "scope",
+		Prompt: &survey.Input{Message: "Scope of this change:"},
 	},
 	{
 		Name:     "message",
@@ -69,9 +68,15 @@ func main() {
 		return
 	}
 
-	out := fmt.Sprintf("%s(%s): %s | %s", answers.Type, answers.Scope, answers.Issue, answers.Message)
-	if !*withIssue {
-		out = fmt.Sprintf("%s(%s): %s", answers.Type, answers.Scope, answers.Message)
+	var out string
+	if answers.Scope == "" {
+		out = fmt.Sprintf("%s: %s", answers.Type, answers.Message)
+	} else {
+		if *withIssue {
+			out = fmt.Sprintf("%s(%s): %s | %s", answers.Type, answers.Scope, answers.Issue, answers.Message)
+		} else {
+			out = fmt.Sprintf("%s(%s): %s", answers.Type, answers.Scope, answers.Message)
+		}
 	}
 	fmt.Printf("message: %s", out)
 	fmt.Println()
